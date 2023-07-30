@@ -152,7 +152,101 @@ sudo tee \
 sudo apt-get update
 sudo apt-get install jenkins`
 
+After that expose port 8080 and using public IP open jenkins UI on browser and install plugins 
+after all the setup the UI like this will be on the page 
 
 
+
+![Screenshot (375)](https://github.com/nitishmalang/Streamlining-Continuous-Integration-and-Deployment-with-Jenkins-Declarative-Pipeline/assets/71919457/5057e51f-893f-4b69-9707-f95fe27f662c)
+
+
+Now lets create a decelerative pipeline using pipeline option given in the job
+
+This will be next page
+
+
+
+
+![Screenshot (376)](https://github.com/nitishmalang/Streamlining-Continuous-Integration-and-Deployment-with-Jenkins-Declarative-Pipeline/assets/71919457/67bb22c9-56ca-4102-a084-24189fde5a06)
+
+
+
+Below on build trigger option I have clicked on "GitHub Hook trigger for GITScm polling" 
+this is because as code committed on repo and build will automatically start on jenkins
+
+
+Now this is the most crucial aspect that is writing a decelarative pipeline
+
+
+
+![Screenshot (377)](https://github.com/nitishmalang/Streamlining-Continuous-Integration-and-Deployment-with-Jenkins-Declarative-Pipeline/assets/71919457/0c8d1ee2-8e7f-48f7-abec-893095e5ba85)
+
+
+This is the page where we have to write decelarative pipeline
+
+now I have to write pipeline in stages
+I consider Code part as a stage
+then next Build part as a stage
+then Push as a stage 
+and then deployment is also the stage
+
+
+
+
+
+
+![Screenshot (378)](https://github.com/nitishmalang/Streamlining-Continuous-Integration-and-Deployment-with-Jenkins-Declarative-Pipeline/assets/71919457/f48f4540-b8f8-4870-b6ca-7e98c206a8ab)
+
+look at it how pipelines are written in stages
+
+after clicking on save 
+
+
+![Screenshot (379)](https://github.com/nitishmalang/Streamlining-Continuous-Integration-and-Deployment-with-Jenkins-Declarative-Pipeline/assets/71919457/32b09d70-b3ff-44c7-a9ac-27613c0418c9)
+
+this UI is shown on this page click on build now
+
+
+
+![Screenshot (380)](https://github.com/nitishmalang/Streamlining-Continuous-Integration-and-Deployment-with-Jenkins-Declarative-Pipeline/assets/71919457/932aa07f-e548-4a92-956b-b873b77a74fd)
+
+after clicking on build this is how build is accomplished 
+
+in ## Console Output it is given 
+
+"Started by user admin
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/notes-app-cicd
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Code)
+[Pipeline] echo
+Cloning the Code
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] echo
+Building the Code
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Push to Docker Hub)
+[Pipeline] echo
+Pushing the image to Dockerhub
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy)
+[Pipeline] echo
+Deploying the container
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
+"
 
 
