@@ -74,7 +74,7 @@ After installation, verify Docker is installed and running:
 
 `sudo docker --version`
 
-After installing Docker, use the following command to list running containers:
+After installing Docker, use the following command to list the running containers:
 
 
 `docker ps`
