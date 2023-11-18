@@ -2,7 +2,7 @@
 
 Setting up AWS EC2 Instance:
 
-Launch an Amazon EC2 instance on AWS console with the desired configuration
+Launch an Amazon EC2 instance on AWS console with the desired configuration.
 Download the generated key pair (.pem) file to your local machine.
 Connecting via SSH:
 
